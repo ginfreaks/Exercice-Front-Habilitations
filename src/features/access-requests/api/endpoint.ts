@@ -13,5 +13,5 @@ export function fetchAccessRequests(
 }
 
 export function fetchAccessRequest(id: string): Promise<AccessRequest> {
-  return http<AccessRequest>(`/api/access-request/${id}`);
+  return http<AccessRequest>(`/api/access-requests/${id}`);
 }

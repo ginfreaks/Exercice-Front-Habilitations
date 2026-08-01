@@ -18,3 +18,7 @@ export interface AccessRequest {
 }
 
 
+export interface ReviewValues {
+  decision: "APPROVED" | "REJECTED";
+  reviewComment?: string;
+}

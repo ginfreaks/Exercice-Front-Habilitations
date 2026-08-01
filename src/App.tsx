@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { AppRoutes } from "./app/router";
+import { AppRoutes } from "./app/routes";
 
 /**
  * Point d'entrée de l'application.

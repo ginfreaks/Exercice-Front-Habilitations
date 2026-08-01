@@ -9,6 +9,9 @@ import { ErrorBlock } from "@/components/ui/ErrorBlock";
 import { EmptyBlock } from "@/components/ui/EmptyBlock";
 import { AccessRequestFilters } from "./AccessRequestFilters";
 import { CreateRequestButton } from "./CreateRequestButton";
+import { ReviewAccessRequestDialog } from "./ReviewAccessRequestDialog";
+import { AccessRequest } from "../types/types";
+import { useState } from "react";
 
 export function AccessRequestsList() {
   const [searchParams] = useSearchParams();
@@ -32,6 +35,10 @@ export function AccessRequestsList() {
   const isError =
     applicationsQuery.isError || rolesQuery.isError || requestsQuery.isError;
 
+  
+  const [reviewingRequest, setReviewingRequest] =
+    useState<AccessRequest | null>(null);
+
   // Function pour réessayer le fetch des data dans le cas d'erreur
   function retryAll() {
     if (applicationsQuery.isError) applicationsQuery.refetch();
@@ -46,7 +53,7 @@ export function AccessRequestsList() {
         </h2>
         <CreateRequestButton />
       </div>
-      
+
       <AccessRequestFilters />
       {isLoading && (
         <div
@@ -82,8 +89,13 @@ export function AccessRequestsList() {
             requests={requestsQuery.data}
             applications={applicationsQuery.data ?? []}
             roles={rolesQuery.data ?? []}
+            onReview={setReviewingRequest}
           />
         )}
+      <ReviewAccessRequestDialog
+        request={reviewingRequest}
+        onClose={() => setReviewingRequest(null)}
+      />
     </div>
   );
 }

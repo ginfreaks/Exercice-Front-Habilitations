@@ -214,8 +214,8 @@ _Merci de remplir cette section (elle fait partie de l'évaluation)._
 
 **Ce que vous auriez fait avec plus de temps :**
 
->
+> Ajout de la pagination, et des testes unitaires
 
 **Temps approximatif passé :**
 
->
+> 2h30
