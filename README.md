@@ -206,11 +206,11 @@ _Merci de remplir cette section (elle fait partie de l'évaluation)._
 
 **Librairie de state / data-fetching choisie :**
 
-> 
+> Tanstack Query
 
 **Choix d'architecture notables :**
 
->
+> Architecture feature based où l'application est découpé par domaine métier.
 
 **Ce que vous auriez fait avec plus de temps :**
 
