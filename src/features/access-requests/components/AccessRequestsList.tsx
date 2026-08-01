@@ -8,6 +8,7 @@ import { LoadingBlock } from "@/components/ui/LoadingBlock";
 import { ErrorBlock } from "@/components/ui/ErrorBlock";
 import { EmptyBlock } from "@/components/ui/EmptyBlock";
 import { AccessRequestFilters } from "./AccessRequestFilters";
+import { CreateRequestButton } from "./CreateRequestButton";
 
 export function AccessRequestsList() {
   const [searchParams] = useSearchParams();
@@ -39,6 +40,13 @@ export function AccessRequestsList() {
   }
   return (
     <div>
+      <div className="mb-4 flex items-center justify-between">
+        <h2 className="text-base font-semibold text-gray-900">
+          Demandes d'habilitation
+        </h2>
+        <CreateRequestButton />
+      </div>
+      
       <AccessRequestFilters />
       {isLoading && (
         <div
