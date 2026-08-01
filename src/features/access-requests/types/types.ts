@@ -1,3 +1,8 @@
+export interface AccessRequestFilters {
+  status?: string;
+  q?: string;
+}
+
 export type AccessRequestStatus = "PENDING" | "APPROVED" | "REJECTED";
 
 export interface AccessRequest {
@@ -13,7 +18,3 @@ export interface AccessRequest {
 }
 
 
-export interface AccessRequestFilters {
-  status?: string;
-  q?: string;
-}

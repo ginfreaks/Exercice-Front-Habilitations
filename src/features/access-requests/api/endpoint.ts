@@ -9,7 +9,7 @@ export function fetchAccessRequests(
   if (filters.status) params.set("status", filters.status);
   if (filters.q) params.set("q", filters.q);
   const qs = params.toString();
-  return http<AccessRequest[]>(`/api/access-requests${qs ? qs : ""}`);
+  return http<AccessRequest[]>(`/api/access-requests${qs ? `?${qs}` : ""}`);
 }
 
 export function fetchAccessRequest(id: string): Promise<AccessRequest> {

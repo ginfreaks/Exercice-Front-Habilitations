@@ -1,4 +1,4 @@
-import { AccessRequestsList } from "@/features/access-requests/AccessRequestsList";
+import { AccessRequestsList } from "@/features/access-requests/components/AccessRequestsList";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 export function AppRoutes() {
